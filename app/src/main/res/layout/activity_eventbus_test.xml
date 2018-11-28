@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+        android:id="@+id/bt_jump"
+        style="@style/commonButtonStyle"
+        android:text="跳转到另外一个页面发送消息"
+        android:onClick="onJump"/>
+
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="显示其它页面evetnBus传过来的数值"
+        app:layout_constraintTop_toBottomOf="@+id/bt_jump"/>
+</android.support.constraint.ConstraintLayout>

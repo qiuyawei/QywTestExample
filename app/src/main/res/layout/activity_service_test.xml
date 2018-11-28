@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.ServiceTestActivity">
+
+    <Button
+        android:id="@+id/bt_startService"
+        style="@style/commonButtonStyle"
+        android:text="通过Intent启动Service" />
+    <Button
+        android:id="@+id/bt_bindService"
+        style="@style/commonButtonStyle"
+        android:text="BindService"
+        app:layout_constraintTop_toBottomOf="@+id/bt_startService"/>
+    <Button
+        android:id="@+id/bt_stopService"
+        style="@style/commonButtonStyle"
+        android:text="Stop Service"
+        app:layout_constraintTop_toBottomOf="@+id/bt_bindService"/>
+</android.support.constraint.ConstraintLayout>

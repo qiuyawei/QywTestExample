@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    >
+
+    <EditText
+        android:id="@+id/et_number1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入一个正整数"
+        android:inputType="number"
+       />
+    <EditText
+        android:id="@+id/et_number2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入一个正整数"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/et_number1"/>
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:hint="显示求和的结果"
+        app:layout_constraintTop_toBottomOf="@+id/et_number2"
+        />
+    <Button
+        android:id="@+id/bt_getSum"
+        style="@style/commonButtonStyle"
+        android:text="求和"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result"/>
+    <Button
+        android:id="@+id/bt_goMainAc"
+        style="@style/commonButtonStyle"
+        android:text="去首页"
+        app:layout_constraintTop_toBottomOf="@+id/bt_getSum"/>
+</android.support.constraint.ConstraintLayout>

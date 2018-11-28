@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta
+            http-equiv="Content-Type"
+            content="text/html; charset=utf-8" />
+    <title></title>
+    <script>
+            function myFunction() {
+                alert("Android调用了JS的callJS方法");
+            }
+
+        </script>
+</head>
+<body>
+<button onclick="myFunction()">点击弹框</button>
+<br/>
+<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1543394770&di=26cfce7bbc1cd97879f089fbb367eace&imgtype=jpg&er=1&src=http%3A%2F%2Ftx.haiqq.com%2Fuploads%2Fallimg%2F150317%2F150544D92-14.jpg"/>
+</body>
+</html>
