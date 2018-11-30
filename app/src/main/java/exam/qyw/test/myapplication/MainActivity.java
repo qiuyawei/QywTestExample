@@ -13,6 +13,7 @@ import exam.qyw.test.myapplication.R;
 import exam.qyw.test.myapplication.activitys.AnimationTestActivity;
 import exam.qyw.test.myapplication.activitys.CallBackTestActivity;
 import exam.qyw.test.myapplication.activitys.EventBusTestActivity;
+import exam.qyw.test.myapplication.activitys.FragmentActivity;
 import exam.qyw.test.myapplication.activitys.JavaStreamTestActivity;
 import exam.qyw.test.myapplication.activitys.MediaTestActivity;
 import exam.qyw.test.myapplication.activitys.OkttpTestActivity;
@@ -42,7 +43,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick({R.id.bt_testCallBack, R.id.bt_testService, R.id.bt_mediaTest, R.id.bt_Animation, R.id.bt_webView
             , R.id.bt_testSingleInstance, R.id.bt_testOkhttp, R.id.bt_testSocket, R.id.bt_testSerizable,R.id.bt_testEventBus
-            ,R.id.bt_testPrinterWriter,R.id.bt_testSearchWithPinYin})
+            ,R.id.bt_testPrinterWriter,R.id.bt_testSearchWithPinYin,R.id.bt_testFragment})
     public void onClick(View view) {
         if (ClickUtil.isFastDoubleClick(view.getId())) {
             return;
@@ -96,6 +97,10 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.bt_testSearchWithPinYin:
                 mIntent.setClass(getmActivity(), SeachActivity.class);
+                startActivity(mIntent);
+                break;
+            case R.id.bt_testFragment:
+                mIntent.setClass(getmActivity(), FragmentActivity.class);
                 startActivity(mIntent);
                 break;
         }

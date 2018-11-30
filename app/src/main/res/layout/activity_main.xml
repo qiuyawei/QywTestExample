@@ -71,6 +71,11 @@
                 style="@style/commonButtonStyle"
                 android:text="测试快速查找根据拼音首字母"
                 />
+            <Button
+                android:id="@+id/bt_testFragment"
+                style="@style/commonButtonStyle"
+                android:text="测试TabLayoutWithFragment"
+                />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

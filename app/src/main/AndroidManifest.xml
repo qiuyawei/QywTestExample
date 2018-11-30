@@ -76,6 +76,7 @@
             android:launchMode="singleTop"/>
         <activity android:name=".activitys.SeachActivity"
             android:launchMode="singleTop"/>
+        <activity android:name=".activitys.FragmentActivity"/>
         <service android:name=".service.MyService">
             <intent-filter>
                 <action android:name="com.qyw.test.myapplication"></action>

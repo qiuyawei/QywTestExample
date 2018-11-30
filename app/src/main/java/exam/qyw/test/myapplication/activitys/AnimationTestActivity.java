@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -69,8 +70,8 @@ public class AnimationTestActivity extends BaseActivity {
 //                Animation animation2 = AnimationUtils.loadAnimation(this, R.anim.rotate_animation);
 //                imageView.setAnimation(animation2);
 //                imageView.startAnimation(animation2);
-                ObjectAnimator.ofFloat(imageView, "rotationY", 0.0f, 110.0f).setDuration(1000).start();
-
+//                ObjectAnimator.ofFloat(imageView, "rotationY", 0.0f, 110.0f).setDuration(1000).start();
+//                RotateAnimation animation=new RotateAnimation(0,360,) ;
                 break;
             case R.id.image:
                 Toast.makeText(this,"被点击了",Toast.LENGTH_SHORT).show();

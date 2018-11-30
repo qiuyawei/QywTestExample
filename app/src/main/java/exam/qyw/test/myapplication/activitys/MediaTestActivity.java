@@ -39,6 +39,7 @@ import exam.qyw.test.myapplication.bean.MediaBean;
 import exam.qyw.test.myapplication.constans.Constant;
 import exam.qyw.test.myapplication.utils.ItemOnClickListener;
 import exam.qyw.test.myapplication.utils.LogUtil;
+import exam.qyw.test.mylibrary.Utils.ToastUtil;
 
 /**
  * Created by Author:qyw
@@ -98,7 +99,6 @@ public class MediaTestActivity extends BaseActivity implements ItemOnClickListen
 
     private void getData() {
         getLoaderManager().initLoader(0, null, mLoaderCallbacks);
-
     }
 
 

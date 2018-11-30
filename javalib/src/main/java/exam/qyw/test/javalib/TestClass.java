@@ -9,12 +9,15 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Queue;
 import java.util.Random;
+import java.util.Stack;
 
 /**
  * Created by Author:qyw
@@ -24,8 +27,13 @@ import java.util.Random;
  */
 public class TestClass {
     public static void main(String[] args) {
-        String conten="abc";
+        Stack<String> stringStack=new Stack<>();
+        Queue<String> queue=new ArrayDeque<>();
+        queue.add("1");
+        queue.add("2");
 
-        System.out.println(conten.charAt(0)>conten.charAt(1));
+        stringStack.add("1");
+        stringStack.add("2");
+        System.out.println(((ArrayDeque<String>) queue).peekFirst());
     }
 }
