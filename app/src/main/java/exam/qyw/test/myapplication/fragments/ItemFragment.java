@@ -1,6 +1,7 @@
 package exam.qyw.test.myapplication.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,8 +14,10 @@ import android.view.ViewGroup;
 import exam.qyw.test.myapplication.R;
 import exam.qyw.test.myapplication.fragments.dummy.DummyContent;
 import exam.qyw.test.myapplication.fragments.dummy.DummyContent.DummyItem;
+import exam.qyw.test.myapplication.inter.Gloable;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * A fragment representing a list of Items.
@@ -22,7 +25,7 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ItemFragment extends Fragment {
+public class ItemFragment extends Fragment  {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -70,7 +73,14 @@ public class ItemFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, new OnListFragmentInteractionListener() {
+                @Override
+                public void onListFragmentInteraction(DummyItem item) {
+                    Intent intent=new Intent(Gloable.Reciver_Action);
+                    intent.putExtra("value",new Random().nextInt(100));
+                    getActivity().sendBroadcast(intent);
+                }
+            }));
         }
         return view;
     }
@@ -92,6 +102,8 @@ public class ItemFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+
 
     /**
      * This interface must be implemented by activities that contain this

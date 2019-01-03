@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="exam.qyw.test.myapplication">
 
 
@@ -30,7 +31,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".base.MyApplaction">
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="exam.qyw.test.myapplication.fileProvider"
@@ -50,8 +52,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activitys.DialogActivity"/>
         <activity android:name=".activitys.CallBackTestActivity" />
         <activity android:name=".activitys.ServiceTestActivity"></activity>
+        <activity android:name=".activitys.LeftTabActivity"/>
+        <activity android:name=".activitys.ScllerAndRecycleActivity"/>
         <activity
             android:name=".activitys.MediaTestActivity"
             android:launchMode="standard" />
@@ -77,11 +82,25 @@
         <activity android:name=".activitys.SeachActivity"
             android:launchMode="singleTop"/>
         <activity android:name=".activitys.FragmentActivity"/>
+        <activity android:name=".activitys.BannerActivity"/>
+        <activity android:name=".activitys.DuanDianTestActivity"/>
+        <activity android:name=".activitys.BlurImageTestActivity"/>
+        <activity android:name=".activitys.SmartRefreshTestActivity"/>
         <service android:name=".service.MyService">
             <intent-filter>
-                <action android:name="com.qyw.test.myapplication"></action>
+                <action android:name="com.qyw.test.myapplication.IMyAidlInterface"></action>
             </intent-filter>
         </service>
+        <!--export=true 接收其他app的广播-->
+        <receiver android:name=".reciver.MyBroadCastReciver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="MyBroadCastReciver.Action"></action>
+            </intent-filter>
+            <intent-filter >
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

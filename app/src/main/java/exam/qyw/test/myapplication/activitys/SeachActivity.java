@@ -1,12 +1,14 @@
 package exam.qyw.test.myapplication.activitys;
 
 import android.app.Activity;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AbsListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.github.promeg.pinyinhelper.Pinyin;
@@ -25,6 +27,7 @@ import exam.qyw.test.myapplication.base.BaseActivity;
 import exam.qyw.test.myapplication.bean.ContactBean;
 import exam.qyw.test.myapplication.bean.RightIndexBean;
 import exam.qyw.test.myapplication.utils.LogUtil;
+import exam.qyw.test.mylibrary.Utils.ToastUtil;
 
 /**
  * Created by Author:qyw
@@ -39,7 +42,8 @@ public class SeachActivity extends BaseActivity implements RightAdapter.OnItemCl
     RecyclerView rightRecycleView;
     @BindView(R.id.tv_bigSize)
     TextView tv_bigSize;
-
+    @BindView(R.id.processBar)
+    ProgressBar progressBar;
     private ArrayList<ContactBean> dataLeft = new ArrayList<>();
     private ArrayList<RightIndexBean> dataRight = new ArrayList<>();
     String[] rightData = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S"
@@ -72,8 +76,44 @@ public class SeachActivity extends BaseActivity implements RightAdapter.OnItemCl
                     smoothMoveToPosition(lefttRecycleView, mToPosition);
                 }
             }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                //判断是否滑到了底部
+                if(!recyclerView.canScrollVertically(1)){
+                    ToastUtil.showMyToast(getmActivity(),"到底了呢，开始加载更多。。。");
+                    progressBar.setVisibility(View.VISIBLE);
+                    new android.os.Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            ContactBean contactBean = new ContactBean();
+                            String name="周杰伦"+new Random().nextInt(10);
+                            contactBean.setName(name);
+                            contactBean.setNameFirstCha(getStringFirstCha(name));
+                            contactBean.setPhone("66666"+new Random().nextInt(20));
+                            dataLeft.add(contactBean);
+                            leftAdapter.notifyDataSetChanged();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }, 3000);
+                }
+                //判断是否滑到了顶部
+                if(!recyclerView.canScrollVertically(-1)){
+                    ToastUtil.showMyToast(getmActivity(),"到顶了呢");
+                }
+
+                LinearLayoutManager linearLayoutManager= (LinearLayoutManager) recyclerView.getLayoutManager();
+                int firstInVis=   linearLayoutManager.findFirstVisibleItemPosition();
+                LogUtil.i("firstInVis:"+firstInVis);
+            }
         });
+
+
+
     }
+
+
 
     private void innitLeftData() {
         //这个必须加上否则不显示，亲测
@@ -90,7 +130,7 @@ public class SeachActivity extends BaseActivity implements RightAdapter.OnItemCl
             contactBean.setPhone(phones[i]);
             dataLeft.add(contactBean);
         }
-        LogUtil.i("size:" + dataLeft.size());
+//        LogUtil.i("size:" + dataLeft.size());
         leftAdapter.notifyDataSetChanged();
     }
 

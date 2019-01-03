@@ -7,7 +7,14 @@ package exam.qyw.test.javalib;
  * 描述：
  */
 public class xiaoMing extends Student {
+    private static MyCallListener myCallListener;
+    private String mName;
+    public xiaoMing(String name){
+        this.mName=name;
+    }
     public void canStudy(String objectName){
-        System.out.println("Student canStudy:"+objectName);
+        System.out.print(mName);
+    }
+    public void showCall(){
     }
 }

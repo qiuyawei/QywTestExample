@@ -31,6 +31,7 @@ public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.ViewHolder> {
         this.mData = data;
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -47,6 +48,8 @@ public class LeftAdapter extends RecyclerView.Adapter<LeftAdapter.ViewHolder> {
         if(postion>=1){
             if(mData.get(postion-1).getNameFirstCha()==bean.getNameFirstCha()){
                 viewHolder.tv_firstLetter.setVisibility(View.GONE);
+            }else {
+                viewHolder.tv_firstLetter.setVisibility(View.VISIBLE);
             }
         }
         viewHolder.tv_name.setText(bean.getName());

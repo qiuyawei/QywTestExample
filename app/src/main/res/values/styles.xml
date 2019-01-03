@@ -23,4 +23,9 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">10dp</item>
     </style>
+    <style name="my_dialog" parent="AlertDialog.AppCompat">
+        <item name="android:inAnimation">@anim/bottom_in</item>
+        <item name="android:outAnimation">@anim/bottom_out</item>
+
+    </style>
 </resources>

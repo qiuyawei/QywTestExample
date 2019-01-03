@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scwang.smartrefresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/smartRefresh">
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+        app:srlDrawableProgress="@drawable/anmial_list"
+        app:srlTextPulling="用力下拉"
+        app:srlTextRefreshing="努力加载中..."
+        app:srlTextRelease="放手是一种智慧"
+        app:srlTextFinish="使命完成"
+       />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+        app:srlDrawableProgressSize="20dp"
+        app:srlDrawableProgress="@drawable/anmial_list"/>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>

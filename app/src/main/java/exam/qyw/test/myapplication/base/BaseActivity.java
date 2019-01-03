@@ -11,6 +11,7 @@ import android.view.View;
 
 import butterknife.ButterKnife;
 import exam.qyw.test.myapplication.R;
+import me.ele.uetool.UETool;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private Activity mActivity;
@@ -23,6 +24,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         mActivity = this;
         ButterKnife.bind(this);
         innitData();
+//        UETool.showUETMenu();
+
     }
 
     /**

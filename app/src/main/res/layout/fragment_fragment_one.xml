@@ -2,14 +2,23 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.FragmentOne">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    android:layout_height="90dp"
+    tools:context=".fragments.FragmentOne"
+    android:clipChildren="false"
+    android:background="@android:color/holo_green_dark">
+    <Button
+        android:id="@+id/bt_one"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:background="@android:color/holo_green_dark"/>
-
+        android:layout_height="wrap_content"
+        android:text="button1"
+        android:background="@drawable/selector_button"
+        android:textColor="@drawable/selector_test_color"
+        android:visibility="invisible"/>
+    <ImageView
+        android:id="@+id/iv_imageSelectTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/selector_image"
+        />
 </FrameLayout>

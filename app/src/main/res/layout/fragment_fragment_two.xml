@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FragmentOne"
+    android:orientation="vertical">
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="30dp"
+       android:gravity="center_vertical"
+       android:paddingLeft="5dp"
+       android:text="请选择喜欢的颜色"
+       android:background="@android:color/darker_gray"/>
+   <Spinner
+       android:id="@+id/bt_spin"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:spinnerMode="dropdown"
+       android:popupBackground="@android:color/holo_blue_dark"
+       android:dropDownWidth="match_parent"
+       android:alpha="10"
+       android:pointerIcon="zoom_in"
+       android:defaultFocusHighlightEnabled="true"
+        android:background="@drawable/layer_list_bg"
+       />
+
+
+</LinearLayout>

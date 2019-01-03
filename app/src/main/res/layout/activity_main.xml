@@ -12,6 +12,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <Button
+                android:id="@+id/bt_blueTest"
+                style="@style/commonButtonStyle"
+                android:text="高斯模糊测试"
+                />
+            <Button
                 android:id="@+id/bt_testCallBack"
                 style="@style/commonButtonStyle"
                 android:text="测试回调"
@@ -75,6 +80,21 @@
                 android:id="@+id/bt_testFragment"
                 style="@style/commonButtonStyle"
                 android:text="测试TabLayoutWithFragment"
+                />
+            <Button
+                android:id="@+id/bt_testBanner"
+                style="@style/commonButtonStyle"
+                android:text="测试广告轮播"
+                />
+            <Button
+                android:id="@+id/bt_dialogAc"
+                style="@style/commonButtonStyle"
+                android:text="测试AlerterDialog"
+                />
+            <Button
+                android:id="@+id/bt_ddts"
+                style="@style/commonButtonStyle"
+                android:text="断点调试"
                 />
         </LinearLayout>
     </ScrollView>
